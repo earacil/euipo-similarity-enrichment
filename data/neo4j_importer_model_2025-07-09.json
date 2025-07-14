@@ -1,0 +1,557 @@
+{
+  "version": "2.3.1-beta.0",
+  "visualisation": {
+    "nodes": [
+      {
+        "id": "n:1",
+        "position": {
+          "x": -104.41600248776179,
+          "y": 68.35906038655294
+        }
+      },
+      {
+        "id": "n:2",
+        "position": {
+          "x": -86.91854598328644,
+          "y": -51.71922728055259
+        }
+      },
+      {
+        "id": "n:3",
+        "position": {
+          "x": 49.67766020077719,
+          "y": 66.53219347986581
+        }
+      },
+      {
+        "id": "n:4",
+        "position": {
+          "x": 40.38068164028023,
+          "y": -53.12002634077204
+        }
+      }
+    ]
+  },
+  "dataModel": {
+    "version": "2.3.1-beta.0",
+    "graphSchemaRepresentation": {
+      "version": "1.0.0",
+      "graphSchema": {
+        "nodeLabels": [
+          {
+            "$id": "nl:1",
+            "token": "Taxonomy",
+            "properties": [
+              {
+                "$id": "p:1",
+                "token": "title",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "nl:2",
+            "token": "Class",
+            "properties": [
+              {
+                "$id": "p:2",
+                "token": "title",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "nl:3",
+            "token": "Taxonomy",
+            "properties": [
+              {
+                "$id": "p:3",
+                "token": "title",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "nl:4",
+            "token": "Class",
+            "properties": [
+              {
+                "$id": "p:7",
+                "token": "title",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          }
+        ],
+        "relationshipTypes": [
+          {
+            "$id": "rt:3",
+            "token": "HAS_SIMILARITY",
+            "properties": [
+              {
+                "$id": "p:4",
+                "token": "similarity",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:5",
+                "token": "comment",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:6",
+                "token": "factors",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "rt:2",
+            "token": "HAS_CHILD",
+            "properties": []
+          },
+          {
+            "$id": "rt:1",
+            "token": "HAS_CHILD",
+            "properties": []
+          }
+        ],
+        "nodeObjectTypes": [
+          {
+            "$id": "n:1",
+            "labels": [
+              {
+                "$ref": "#nl:1"
+              }
+            ]
+          },
+          {
+            "$id": "n:2",
+            "labels": [
+              {
+                "$ref": "#nl:2"
+              }
+            ]
+          },
+          {
+            "$id": "n:3",
+            "labels": [
+              {
+                "$ref": "#nl:3"
+              }
+            ]
+          },
+          {
+            "$id": "n:4",
+            "labels": [
+              {
+                "$ref": "#nl:4"
+              }
+            ]
+          }
+        ],
+        "relationshipObjectTypes": [
+          {
+            "$id": "r:3",
+            "type": {
+              "$ref": "#rt:3"
+            },
+            "from": {
+              "$ref": "#n:1"
+            },
+            "to": {
+              "$ref": "#n:3"
+            }
+          },
+          {
+            "$id": "r:2",
+            "type": {
+              "$ref": "#rt:2"
+            },
+            "from": {
+              "$ref": "#n:2"
+            },
+            "to": {
+              "$ref": "#n:1"
+            }
+          },
+          {
+            "$id": "r:1",
+            "type": {
+              "$ref": "#rt:1"
+            },
+            "from": {
+              "$ref": "#n:4"
+            },
+            "to": {
+              "$ref": "#n:3"
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "$id": "c:2",
+            "name": "title_Class_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:2"
+            },
+            "properties": [
+              {
+                "$ref": "#p:2"
+              }
+            ]
+          },
+          {
+            "$id": "c:4",
+            "name": "title_Class_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:4"
+            },
+            "properties": [
+              {
+                "$ref": "#p:7"
+              }
+            ]
+          },
+          {
+            "$id": "c:1",
+            "name": "title_Taxonomy_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:1"
+            },
+            "properties": [
+              {
+                "$ref": "#p:1"
+              }
+            ]
+          },
+          {
+            "$id": "c:3",
+            "name": "title_Taxonomy_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:3"
+            },
+            "properties": [
+              {
+                "$ref": "#p:3"
+              }
+            ]
+          }
+        ],
+        "indexes": [
+          {
+            "$id": "i:1",
+            "name": "title_Taxonomy_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:1"
+            },
+            "properties": [
+              {
+                "$ref": "#p:1"
+              }
+            ]
+          },
+          {
+            "$id": "i:2",
+            "name": "title_Class_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:2"
+            },
+            "properties": [
+              {
+                "$ref": "#p:2"
+              }
+            ]
+          },
+          {
+            "$id": "i:3",
+            "name": "title_Taxonomy_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:3"
+            },
+            "properties": [
+              {
+                "$ref": "#p:3"
+              }
+            ]
+          },
+          {
+            "$id": "i:4",
+            "name": "title_Class_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:4"
+            },
+            "properties": [
+              {
+                "$ref": "#p:7"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "graphSchemaExtensionsRepresentation": {
+      "nodeKeyProperties": [
+        {
+          "node": {
+            "$ref": "#n:1"
+          },
+          "keyProperty": {
+            "$ref": "#p:1"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:2"
+          },
+          "keyProperty": {
+            "$ref": "#p:2"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:3"
+          },
+          "keyProperty": {
+            "$ref": "#p:3"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:4"
+          },
+          "keyProperty": {
+            "$ref": "#p:7"
+          }
+        }
+      ]
+    },
+    "graphMappingRepresentation": {
+      "dataSourceSchema": {
+        "type": "local",
+        "tableSchemas": [
+          {
+            "name": "ST_Dataset_main_fields_similarity_int.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "Class 1",
+                "sample": "37",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "Term 1",
+                "sample": "Home construction services",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "Similarity",
+                "sample": "3",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "Class 2",
+                "sample": "37",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "Term 2",
+                "sample": "Commercial building construction",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "Comment",
+                "sample": "",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "Reasoning",
+                "sample": "['1. Nature', '6. Distribution channels', '7. Relevant public', '8. Producer / Provider']",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "Factors",
+                "sample": "[1, 6, 7, 8]",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "nodeMappings": [
+        {
+          "node": {
+            "$ref": "#n:4"
+          },
+          "tableName": "ST_Dataset_main_fields_similarity_int.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:7"
+              },
+              "fieldName": "Class 2"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:2"
+          },
+          "tableName": "ST_Dataset_main_fields_similarity_int.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:2"
+              },
+              "fieldName": "Class 1"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:1"
+          },
+          "tableName": "ST_Dataset_main_fields_similarity_int.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:1"
+              },
+              "fieldName": "Term 1"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:3"
+          },
+          "tableName": "ST_Dataset_main_fields_similarity_int.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:3"
+              },
+              "fieldName": "Term 2"
+            }
+          ]
+        }
+      ],
+      "relationshipMappings": [
+        {
+          "relationship": {
+            "$ref": "#r:3"
+          },
+          "tableName": "ST_Dataset_main_fields_similarity_int.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:4"
+              },
+              "fieldName": "Similarity"
+            },
+            {
+              "property": {
+                "$ref": "#p:5"
+              },
+              "fieldName": "Comment"
+            },
+            {
+              "property": {
+                "$ref": "#p:6"
+              },
+              "fieldName": "Factors"
+            }
+          ],
+          "fromMapping": {
+            "fieldName": "Term 1"
+          },
+          "toMapping": {
+            "fieldName": "Term 2"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:2"
+          },
+          "tableName": "ST_Dataset_main_fields_similarity_int.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "Class 1"
+          },
+          "toMapping": {
+            "fieldName": "Term 1"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:1"
+          },
+          "tableName": "ST_Dataset_main_fields_similarity_int.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "Class 2"
+          },
+          "toMapping": {
+            "fieldName": "Term 2"
+          }
+        }
+      ]
+    },
+    "configurations": {
+      "idsToIgnore": []
+    }
+  }
+}
